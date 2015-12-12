@@ -7,6 +7,7 @@ import com.android.systemui.qs.tiles.CellularTile
 import com.android.systemui.qs.tiles.WifiTile
 import com.android.systemui.qs.tiles.CaffeineTile
 import com.android.systemui.qs.tiles.HeadsUpTile
+import com.android.systemui.qs.tiles.AmbientDisplayTile
 
 import dagger.Binds
 import dagger.Module
@@ -50,5 +51,11 @@ interface CustomQSModule {
     @IntoMap
     @StringKey(HeadsUpTile.TILE_SPEC)
     fun bindHeadsUpTile(headsUpTile: HeadsUpTile): QSTileImpl<*>
+
+    /** Inject AmbientDisplayTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(AmbientDisplayTile.TILE_SPEC)
+    fun bindAmbientDisplayTile(ambientDisplayTile: AmbientDisplayTile): QSTileImpl<*>
 
 }
