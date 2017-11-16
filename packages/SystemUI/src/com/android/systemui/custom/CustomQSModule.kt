@@ -8,6 +8,7 @@ import com.android.systemui.qs.tiles.WifiTile
 import com.android.systemui.qs.tiles.CaffeineTile
 import com.android.systemui.qs.tiles.HeadsUpTile
 import com.android.systemui.qs.tiles.AmbientDisplayTile
+import com.android.systemui.qs.tiles.RebootTile
 import com.android.systemui.qs.tiles.SyncTile
 
 import dagger.Binds
@@ -64,5 +65,11 @@ interface CustomQSModule {
     @IntoMap
     @StringKey(AmbientDisplayTile.TILE_SPEC)
     fun bindAmbientDisplayTile(ambientDisplayTile: AmbientDisplayTile): QSTileImpl<*>
+
+    /** Inject RebootTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(RebootTile.TILE_SPEC)
+    fun bindRebootTile(rebootTile: RebootTile): QSTileImpl<*>
 
 }
