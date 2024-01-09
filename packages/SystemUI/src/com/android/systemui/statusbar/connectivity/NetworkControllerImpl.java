@@ -744,34 +744,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
             MobileSignalController mobileSignalController = mMobileSignalControllers.valueAt(i);
             mobileSignalController.notifyListeners(cb);
         }
-        if (mMobileSignalControllers.size() == 2) {
-            boolean volte1 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean volte2 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            boolean vowifi1 = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
-            boolean vowifi2 = mMobileSignalControllers.valueAt(1).isVowifiAvailable();
-            cb.setImsIcon(new ImsIconState((volte1 || volte2),
-                    (vowifi1 || vowifi2),
-                    getVolteResId(volte1, volte2),
-                    getVowifiResId(vowifi1, vowifi2),
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else if (mMobileSignalControllers.size() == 1) {
-            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean vowifi = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
-            cb.setImsIcon(new ImsIconState(volte,
-                    vowifi,
-                    volte ? R.drawable.stat_sys_volte : 0,
-                    vowifi ? R.drawable.stat_sys_vowifi : 0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else {
-            cb.setImsIcon(new ImsIconState(false,
-                    false,
-                    0,
-                    0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        }
         mCallbackHandler.setListening(cb, true);
     }
 
