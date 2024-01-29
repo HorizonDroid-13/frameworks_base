@@ -244,13 +244,14 @@ public class PixelPropsUtils {
 
                 dlog("Spoofing build for GMS");
                 // Alter build parameters to pixel for avoiding hardware attestation enforcement
-                    setPropValue("BRAND", "essential");
-                    setPropValue("MANUFACTURER", "Essential Products");
-                    setPropValue("DEVICE", "mata");
-                    setPropValue("PRODUCT", "mata");
-                    setPropValue("MODEL", "PH-1");
-                    setPropValue("FINGERPRINT", "essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-keys");
-                    setVersionFieldString("SECURITY_PATCH", "2018-03-05");
+                    setBuildField("BRAND", "Hisense");
+                    setBuildField("MANUFACTURER", "Hisense");
+                    setBuildField("DEVICE", "HS6735MT");
+                    setBuildField("ID", "MRA58K");
+                    setBuildField("FINGERPRINT", "Hisense/F30/HS6735MT:6.0/MRA58K/L1228.6.01.01:user/release-keys");
+                    setBuildField("MODEL", "Hisense F30");
+                    setBuildField("PRODUCT", "F30");
+                    setVersionFieldString("SECURITY_PATCH", "2016-02-01");
                 return true;
             }
         }
