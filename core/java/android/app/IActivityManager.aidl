@@ -715,6 +715,11 @@ interface IActivityManager {
      */
     boolean enableFgsNotificationRateLimit(in boolean enable);
 
+   /**
+     *  Should disable touch if three fingers to screen shot is active?
+     */
+    boolean isSwipeToScreenshotGestureActive();
+
     /**
      * Holds the AM lock for the specified amount of milliseconds.
      * This is intended for use by the tests that need to imitate lock contention.
