@@ -72,16 +72,13 @@ class RotationHelper {
      * - sDisplayListener != null
      * - sContext != null
      */
-    static void init(Context context, Handler handler,
-            Consumer<Integer> rotationCallback, Consumer<Boolean> foldStateCallback) {
+    static void init(Context context, Handler handler) {
         if (context == null) {
             throw new IllegalArgumentException("Invalid null context");
         }
         sContext = context;
         sHandler = handler;
         sDisplayListener = new AudioDisplayListener();
-        sRotationCallback = rotationCallback;
-        sFoldStateCallback = foldStateCallback;
         enable();
     }
 
